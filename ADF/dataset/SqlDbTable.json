@@ -1,0 +1,13 @@
+{
+    "name": "SqlDbTable",
+    "properties": {
+        "linkedServiceName": {
+            "referenceName": "onpremSqlServer",
+            "type": "LinkedServiceReference"
+        },
+        "annotations": [],
+        "type": "SqlServerTable",
+        "schema": []
+    },
+    "type": "Microsoft.DataFactory/factories/datasets"
+}

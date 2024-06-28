@@ -1,0 +1,22 @@
+{
+    "now": "2024-03-31T14:47:42.358Z",
+    "perfNow": 269853,
+    "diagnosticCorrelation": "b1263df4-cf01-4e56-b773-1a276fd6aebe",
+    "source": "DownloadSupportFiles",
+    "environment": {
+        "productName": "a365",
+        "buildVersion": "24.0326.13",
+        "environmentType": 9,
+        "resourceName": "synws-thameur",
+        "resourceRegion": "canadaeast",
+        "resourceGroup": "rg-data-engineering-project",
+        "subscriptionId": "91087a47-6639-49ec-9eb5-eb530bf09e40",
+        "sessionId": "C/9/X",
+        "operationId": "3g2X4",
+        "gitType": "live"
+    },
+    "additionalInfo": {
+        "selectedResource": "create view",
+        "selectedResourceType": "pipeline"
+    }
+}

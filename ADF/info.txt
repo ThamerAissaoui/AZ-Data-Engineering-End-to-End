@@ -1,0 +1,6 @@
+selected resource name:		copy_all_tables
+selected resource type:		pipeline
+factory name:			adf-thameur-demo-01
+factory location:		eastus
+subscription id:		91087a47-6639-49ec-9eb5-eb530bf09e40
+time of download (UTC):		Sun, 31 Mar 2024 14:48:48 GMT

@@ -1,0 +1,6 @@
+selected resource name:		create view
+selected resource type:		pipeline
+workspace name:			synws-thameur
+workspace location:		canadaeast
+subscription id:		91087a47-6639-49ec-9eb5-eb530bf09e40
+time of download (UTC):		Sun, 31 Mar 2024 14:47:42 GMT
