@@ -14,7 +14,7 @@ Also, we are using Azure Active Directory (AAD) and Azure Key Vault for the moni
 
 
 ## Architecture
-![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/WORKFLOW.gif)
+![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/WORKFLOW.png)
 
 ## Resources
 ![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/assets/36975418/4b6b2221-8859-44a1-8cd5-8ff1244a3a8b)
