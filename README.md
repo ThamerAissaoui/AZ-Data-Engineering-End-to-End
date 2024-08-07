@@ -58,8 +58,6 @@ A pipeline that:
 
 ### 4. Azure Devops
 Inorder to automate the CI/CD pipilines we created and and linked am AZ devops repo to the databricks workspace to make sure all our code is synched between Dev and Prod:
-![image](https://github.com/user-attachments/assets/139825cb-2bee-4fcd-84fd-f8b5144ebbf1)
-![image](https://github.com/user-attachments/assets/3e069d5d-4868-47c2-8d15-dba483fd566e)
 
 Since Azure Data factory cannot pull notebooks directly from git repository created in the Databricks worspace, we decided to created a live folder always synched with main branch of azure devops and that contains all the latest code changes, Azure data factory will pull all the notebooks from that folder:
 ![image](https://github.com/user-attachments/assets/59d41eb2-1c0f-42a5-a8aa-82cf942193ca)
