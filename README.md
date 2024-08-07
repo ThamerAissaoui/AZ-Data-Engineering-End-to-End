@@ -13,6 +13,9 @@ The use case for this project is building an end-to-end solution by ingesting th
 Also, we are using Azure Active Directory (AAD) and Azure Key Vault for the monitoring and governance purpose.
 
 
+## Old Architecture
+![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/OLD_WORKFLOW.png)
+
 ## Architecture
 ![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/WORKFLOW.png)
 
