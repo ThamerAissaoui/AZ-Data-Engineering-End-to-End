@@ -72,79 +72,34 @@ Since Azure Data factory cannot pull notebooks directly from git repository crea
 ### Automating CI/CD Pipelines
 
 In order to automate the CI/CD pipelines, we created and linked an Azure DevOps repository to the Databricks workspace. This ensures that all our code is synchronized between the Development (Dev) and Production (Prod) environments.
-
-#### Steps to Set Up CI/CD Pipeline Automation
-
-1. **Create Azure DevOps Repository**:
-   - Log in to your Azure DevOps account.
-   - Create a new project or use an existing project.
-   - Within the project, create a new repository where you will store your Databricks notebooks and code.
-
-2. **Link Azure DevOps Repository to Databricks**:
-   - In your Databricks workspace, navigate to the user settings.
-   - Under the "Git Integration" section, select "Azure DevOps".
-   - Authenticate with your Azure DevOps account and select the repository you created.
-
-3. **Set Up Branching Strategy**:
-   - Create branches for development (`dev`) and production (`prod`) in your Azure DevOps repository.
-   - Follow a branching strategy that suits your workflow, such as feature branches, hotfix branches, etc.
-
-4. **Configure CI/CD Pipelines**:
-   - In Azure DevOps, navigate to the Pipelines section.
-   - Create a new pipeline and link it to your repository.
-   - Define the pipeline stages:
-     - **Build Stage**: Validate and lint the code.
-     - **Test Stage**: Run unit tests and integration tests.
-     - **Deploy Stage**: Deploy the code to the Databricks workspace.
    
-   Example `azure-pipelines.yml`:
+   `azure-pipelines.yml`:
 
    ```yaml
    trigger:
-     branches:
-       include:
-         - dev
-         - prod
-
+         - main
+         -
+   variables:
+     - group: dbw-cicd-dev
+   
+     - name: vmImageName
+       value: "windows-latest"
+     - name: notebooksPath
+       value: "notebook"
+   
    pool:
-     vmImage: 'ubuntu-latest'
-
+     vmImage: $(vmImageName)
+   
    stages:
-   - stage: Build
-     jobs:
-     - job: Build
-       steps:
-       - script: echo "Building the project..."
-         displayName: 'Build Stage'
-
-   - stage: Test
-     jobs:
-     - job: Test
-       steps:
-       - script: echo "Running tests..."
-         displayName: 'Test Stage'
-
-   - stage: Deploy
-     jobs:
-     - job: Deploy
-       steps:
-       - script: echo "Deploying to Databricks..."
-         displayName: 'Deploy Stage'
-       - script: |
-           # Add your deployment script here
-           echo "Deployment script goes here"
-         displayName: 'Databricks Deployment'
+   - template: templates/deploy-notebooks.yml
+     parameters:
+       stageId: "Deploy_to_Dev_Environment"
+       env: "dev"
+       environmentName: $(dev-environment-name)
+       resourceGroupName: $(dev-resource-group-name)
+       serviceConnection: $(dev-service-connection-name)
+       notebooksPath: $(notebooksPath)
    ```
-
-5. **Synchronize Code Between Dev and Prod**:
-   - Ensure that changes in the `dev` branch are thoroughly tested before merging into the `prod` branch.
-   - Use pull requests (PRs) to review and approve changes before they are merged into the `prod` branch.
-
-6. **Monitor and Maintain**:
-   - Regularly monitor the pipeline runs to ensure that they are successful.
-   - Update the pipeline configuration as needed to adapt to changes in the project or workflow.
-
-By following these steps, we ensure that our code is consistently and reliably synchronized between the Development and Production environments, facilitating efficient and error-free deployments.
 
 
 
