@@ -16,7 +16,22 @@ Also, we are using Azure Active Directory (AAD) and Azure Key Vault for the moni
 ## Old Architecture
 ![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/OLD_WORKFLOW.png)
 
-## Architecture
+## Architecture 1
+![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/WORKFLOW.png)
+
+1. Ingest Data from Event Hub/IoT Hub to Data Lake
+Stream Analytics can be configured to read from Event Hub or IoT Hub as input, process the data (e.g., transformations, aggregations), and write directly to an Azure Data Lake Storage (ADLS) destination.
+Stream Analytics handles real-time streaming and can output data directly in Parquet, JSON, or CSV format in Data Lake Storage, ready for further processing.
+2. Process Data with Databricks
+Azure Databricks can read the data stored in the Data Lake, transform it further if necessary (e.g., advanced aggregations, machine learning models), and prepare it for loading into Synapse.
+Since Databricks is highly scalable and integrated with the Data Lake, it is well-suited for batch or micro-batch processing of the data stored by Stream Analytics.
+3. Load Data into Synapse
+Once the data is processed in Databricks, you can use Databricks connectors or Synapse’s native connectors to load it into Synapse tables.
+This can be automated within Databricks itself, using notebooks and workflows, or even through Synapse pipelines if you’re using Synapse for orchestration.
+4. Visualize Data in Power BI
+With the data now in Synapse, Power BI can connect to the Synapse data warehouse as a source for reporting and visualization.
+
+## Architecture 2
 ![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/WORKFLOW.png)
 
 ## Resources
