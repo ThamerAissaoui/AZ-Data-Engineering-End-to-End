@@ -1,19 +1,48 @@
 # AZ-Data-Engineering-End-to-End
 
-This is a complete End to End Azure Data Engineering Project. In this project we are going to create an end-to-end data platform right from Data Ingestion, Data Transformation, Data Loading and Reporting. The tools that are covered in this project are, 
-1.	Azure Data Factory 
-2.	Azure Data Lake Storage Gen2 
-3.	Azure Databricks 
-4.	Azure Synapse Analytics 
-5.	Azure Key vault 
-6.	Azure Active Directory (AAD) and 
-7.	Microsoft Power BI
-   
-The use case for this project is building an end-to-end solution by ingesting the tables from on-premises SQL Server database using Azure Data Factory and then store the data in Azure Data Lake. Then Azure databricks is used to transform the RAW data to the most cleanest form of data and then we are using Azure Synapse Analytics to load the clean data and finally using Microsoft Power BI to integrate with Azure synapse analytics to build an interactive dashboard. 
-Also, we are using Azure Active Directory (AAD) and Azure Key Vault for the monitoring and governance purpose.
+This project demonstrates a complete end-to-end Azure Data Engineering solution, covering all stages from data ingestion to reporting. The platform is designed to handle data ingestion, transformation, storage, loading, and visualization using key Azure services.
+
+### Project Overview
+In this project, we’ll create a robust data platform using the following Azure tools:
+
+- **Azure Data Factory** for seamless data ingestion
+- **Azure Data Lake Storage Gen2** for scalable data storage
+- **Azure Databricks** for data transformation
+- **Azure Synapse Analytics** for data warehousing and loading
+- **Microsoft Power BI** for data visualization and interactive reporting
+- **Azure Active Directory (AAD)** and **Azure Key Vault** for secure access and governance
+
+### Use Case
+The objective is to build an end-to-end data solution by ingesting tables from an on-premises SQL Server database into Azure. Here’s the step-by-step flow:
+1. **Data Ingestion**: Data is ingested using Azure Data Factory and stored in Azure Data Lake.
+2. **Data Transformation**: Azure Databricks transforms the raw data into a clean, optimized format.
+3. **Data Loading**: The transformed data is loaded into Azure Synapse Analytics for further analysis.
+4. **Data Visualization**: Microsoft Power BI connects to Azure Synapse to create interactive dashboards for reporting and insights.
+5. **Security and Governance**: Azure Active Directory (AAD) and Azure Key Vault ensure secure access and compliance through monitoring and governance.
+
+This project provides a comprehensive demonstration of an end-to-end data engineering workflow in Azure, showcasing industry-standard practices for data integration, transformation, and reporting.
 
 
 ## Old Architecture
+This legacy workflow is a streaming data processing pipeline for telecom probes, primarily focused on real-time ingestion, processing, anomaly detection, and storage.
+
+### Workflow Summary:
+1. **Data Ingestion**:
+   - IoT telecom probes generate data, which is consumed by a **Kafka** consumer (using Java).
+
+2. **Streaming Core Processing**:
+   - Data from Kafka is processed and enriched in real-time using **Apache Spark** and Java. This forms the core of the streaming ingestion and processing layer.
+
+3. **Anomaly Detection**:
+   - The processed data is sent to a microservice for anomaly detection, built with **Spring Boot** (Java) and **Python**.
+
+4. **Data Storage**:
+   - Anomalies and processed data are stored in databases like **MariaDB** and **PostgreSQL** (with Citus extension for high availability).
+
+5. **Analytics and Data Warehousing**:
+   - Data is also forwarded to **Druid** and **StarRocks** for analytics and data warehousing purposes, enabling efficient querying and analysis.
+
+This workflow enables real-time data processing, anomaly detection, and storage for analytical insights, leveraging a mix of streaming, storage, and analytics technologies.
 ![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/OLD_WORKFLOW.png)
 
 ## Architecture 1
