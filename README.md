@@ -17,7 +17,7 @@ Also, we are using Azure Active Directory (AAD) and Azure Key Vault for the moni
 ![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/OLD_WORKFLOW.png)
 
 ## Architecture 1
-![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/WORKFLOW.png)
+![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/WORKFLOW_2.png)
 
 1. Ingest Data from Event Hub/IoT Hub to Data Lake
 Stream Analytics can be configured to read from Event Hub or IoT Hub as input, process the data (e.g., transformations, aggregations), and write directly to an Azure Data Lake Storage (ADLS) destination.
