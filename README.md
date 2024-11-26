@@ -63,6 +63,23 @@ With the data now in Synapse, Power BI can connect to the Synapse data warehouse
 ## Architecture 2
 ![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/WORKFLOW.png)
 
+
+## Architecture 3
+![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/WORKFLOW_DENODO.png)
+
+1. Data Sources:
+    - On-premises SQL Server
+    - Azure Data Lake Storage (Parquet/JSON)
+2. Data Virtualization Layer:
+    - Denodo integrates data sources into a unified view for immediate access.
+3. Transformation:
+    - Lightweight transformations in Denodo (joins, filtering, calculations).
+    - Heavy transformations in Databricks (e.g., machine learning, advanced analytics) by querying Denodo views.
+4. Data Warehouse:
+    - Azure Synapse queries Denodo to load aggregated or cleaned data into the warehouse.
+5. Visualization:
+Power BI queries either Denodo directly or Azure Synapse for dashboarding.
+
 ## Resources
 ![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/assets/36975418/4b6b2221-8859-44a1-8cd5-8ff1244a3a8b)
 
