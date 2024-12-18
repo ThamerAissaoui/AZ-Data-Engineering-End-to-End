@@ -60,6 +60,16 @@ This can be automated within Databricks itself, using notebooks and workflows, o
 4. Visualize Data in Power BI
 With the data now in Synapse, Power BI can connect to the Synapse data warehouse as a source for reporting and visualization.
 
+5. Expose Azure Synapse Data to External Systems
+Azure Functions can expose an HTTP API endpoint for external systems like Tableau, Elasticsearch, or other BI tools to fetch processed data directly from Synapse.
+
+HTTP Trigger Function: Acts as an API endpoint to query Synapse and return results.
+Use Case: Integrate with external dashboards or search systems.
+Example Code:
+
+![image](https://github.com/user-attachments/assets/18789b90-528b-42ee-8f77-706f3ac2dd2d)
+
+
 ## Architecture 2
 ![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/WORKFLOW.png)
 
