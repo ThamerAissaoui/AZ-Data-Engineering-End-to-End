@@ -90,8 +90,18 @@ Example Code:
 5. Visualization:
 Power BI queries either Denodo directly or Azure Synapse for dashboarding.
 
-## Architecture 3
+## Architecture 4
 ![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/WORKFLOW_Fabric.png)
+
+In the initial phase, we will utilize Azure IoT Hub to establish a connection with telecom probes and ingest data. This data will be routed to Azure Event Hub, which will act as a buffer to ensure scalability and reliability. The ingested data will then be processed by Azure Stream Analytics for real-time aggregation and cleansing. Once processed, the data will be sent back to Event Hub, which will trigger Azure Functions to store the cleansed data in OneLake in JSON format.
+
+Next, using Synapse Data Engineering, we will process the raw JSON files and transform them into a refined Delta table for efficient querying and analytics.
+
+Following this, with Synapse Data Science, we will implement an anomaly detection machine learning model to analyze correlations within the acquired data and integrate the results into the Lake database for further insights.
+
+Subsequently, leveraging Power BI, we will build an interactive dashboard to visualize the latest data and trends.
+
+Finally, utilizing Data Activator, we will configure alerts within Power BI visuals to automatically trigger notifications via Microsoft Teams or email, ensuring proactive monitoring and response.
 
 ## Resources
 ![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/assets/36975418/4b6b2221-8859-44a1-8cd5-8ff1244a3a8b)
@@ -99,7 +109,7 @@ Power BI queries either Denodo directly or Azure Synapse for dashboarding.
 ## Plan
 
 ### 1.	Azure Data Factory 
-Setup integration runtime to connect the onpremises to the cloud:
+Setup integration runtime to connect the on premises to the cloud:
 
 
 ![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/assets/36975418/fc810f0a-051d-4c86-915f-65fc7ec8281e)
