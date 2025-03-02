@@ -90,6 +90,9 @@ Example Code:
 5. Visualization:
 Power BI queries either Denodo directly or Azure Synapse for dashboarding.
 
+## Architecture 3
+![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/blob/main/WORKFLOW_Fabric.png)
+
 ## Resources
 ![image](https://github.com/ThamerAissaoui/AZ-Data-Engineering-End-to-End/assets/36975418/4b6b2221-8859-44a1-8cd5-8ff1244a3a8b)
 
